@@ -14,30 +14,30 @@ import java.util.List;
 @RestController
 @RequestMapping("/lottery")
 public class LotteryController {
-  final private LotteryService lotteryService;
+    final private LotteryService lotteryService;
 
-  @Autowired
-  public LotteryController(LotteryService lotteryService) {
-    this.lotteryService = lotteryService;
-  }
+    @Autowired
+    public LotteryController(LotteryService lotteryService) {
+        this.lotteryService = lotteryService;
+    }
 
-  @PostMapping("/participant")
-  void addParticipant(Participant participant) {
-    lotteryService.addParticipant(participant);
-  }
+    @PostMapping("/participant")
+    void addParticipant(Participant participant) {
+        lotteryService.addParticipant(participant);
+    }
 
-  @GetMapping("/participant")
-  List<Participant> getAllParticipants() {
-    return lotteryService.getAllParticipant();
-  }
+    @GetMapping("/participant")
+    List<Participant> getAllParticipants() {
+        return lotteryService.getAllParticipant();
+    }
 
-  @GetMapping("/start")
-  ResultLottery start() {
-    return lotteryService.start();
-  }
+    @GetMapping("/start")
+    ResultLottery start() {
+        return lotteryService.start();
+    }
 
-  @GetMapping("/winners")
-  List<Participant> getAllWinners() {
-    return lotteryService.getAllWinners();
-  }
+    @GetMapping("/winners")
+    List<Participant> getAllWinners() {
+        return lotteryService.getAllWinners();
+    }
 }
