@@ -1,6 +1,5 @@
 package ru.kastricyn.lottery.entity;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
