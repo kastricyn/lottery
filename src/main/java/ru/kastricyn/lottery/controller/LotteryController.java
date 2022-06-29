@@ -22,22 +22,22 @@ public class LotteryController {
     }
 
     @PostMapping("/participant")
-    void addParticipant(Participant participant) {
+    public void addParticipant(Participant participant) {
         lotteryService.addParticipant(participant);
     }
 
     @GetMapping("/participant")
-    List<Participant> getAllParticipants() {
+    public List<Participant> getAllParticipants() {
         return lotteryService.getAllParticipant();
     }
 
     @GetMapping("/start")
-    ResultLottery start() {
+    public ResultLottery start() {
         return lotteryService.start();
     }
 
     @GetMapping("/winners")
-    List<Participant> getAllWinners() {
+    public List<Participant> getAllWinners() {
         return lotteryService.getAllWinners();
     }
 }

@@ -6,7 +6,7 @@ import ru.kastricyn.lottery.entity.ParticipantEntity;
 
 @Service
 public class ParticipantMap {
-    ParticipantEntity get(Participant participant){
+    public ParticipantEntity get(Participant participant){
         var ans = new ParticipantEntity();
         ans.setName(participant.name());
         ans.setAge(participant.age());
@@ -14,7 +14,7 @@ public class ParticipantMap {
         return ans;
     }
 
-    Participant get(ParticipantEntity participantEntity){
+    public Participant get(ParticipantEntity participantEntity){
         return new Participant(participantEntity.getName(), participantEntity.getAge(), participantEntity.getCity());
     }
 }

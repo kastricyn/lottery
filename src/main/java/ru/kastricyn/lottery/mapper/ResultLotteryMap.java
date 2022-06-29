@@ -13,14 +13,14 @@ public class ResultLotteryMap {
         this.participantMap = participantMap;
     }
 
-    ResultLotteryEntity get(ResultLottery resultLottery) {
+    public ResultLotteryEntity get(ResultLottery resultLottery) {
         var ans = new ResultLotteryEntity();
         ans.setParticipant(participantMap.get(resultLottery.participant()));
         ans.setWinValue(resultLottery.winValue());
         return ans;
     }
 
-    ResultLottery get(ResultLotteryEntity resultLotteryEntity) {
+    public ResultLottery get(ResultLotteryEntity resultLotteryEntity) {
         return new ResultLottery(participantMap.get(resultLotteryEntity.getParticipant()),
                 resultLotteryEntity.getWinValue());
     }
