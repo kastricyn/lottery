@@ -18,23 +18,22 @@ import java.util.Objects;
 @ToString
 @NoArgsConstructor
 public class ParticipantEntity {
-    @Id
-    private Long id;
+  @Id private Long id;
 
-    private String name;
-    private int age;
-    private String city;
+  private String name;
+  private int age;
+  private String city;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        ParticipantEntity that = (ParticipantEntity) o;
-        return id != null && Objects.equals(id, that.id);
-    }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+    ParticipantEntity that = (ParticipantEntity) o;
+    return id != null && Objects.equals(id, that.id);
+  }
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+  @Override
+  public int hashCode() {
+    return getClass().hashCode();
+  }
 }

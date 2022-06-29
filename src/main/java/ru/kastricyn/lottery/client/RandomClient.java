@@ -6,9 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient(url = "${feign.client.random.url}", name = "random")
 public interface RandomClient {
-    @GetMapping("/integers")
-    int getRandom(@SpringQueryMap QueryParams queryParams);
+  @GetMapping("/integers")
+  int getRandom(@SpringQueryMap QueryParams queryParams);
 
-    record QueryParams(int num, int min, int max, int col, int base, String format, String rnd) {
-    }
+  default int getRandom(int min, int max) {
+    var queryParams = new QueryParams(1, min, max, 1, 10, "plain", "new");
+    return getRandom(queryParams);
+  }
+
+  record QueryParams(int num, long min, long max, int col, int base, String format, String rnd) {}
 }

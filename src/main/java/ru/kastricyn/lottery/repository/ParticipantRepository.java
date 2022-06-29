@@ -7,5 +7,5 @@ import ru.kastricyn.lottery.entity.ParticipantEntity;
 import java.util.List;
 
 public interface ParticipantRepository extends CrudRepository<ParticipantEntity, Long> {
-    List<Participant> getAll(); //так, просто для единообразия API
+  List<Participant> getAll(); // так, просто для единообразия API
 }
