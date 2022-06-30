@@ -1,6 +1,5 @@
 package ru.kastricyn.lottery.mapper;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.kastricyn.lottery.dto.Participant;
 import ru.kastricyn.lottery.dto.ResultLottery;
@@ -20,8 +19,10 @@ public class ResultLotteryMap {
 
   public ResultLottery get(ResultLotteryEntity resultLotteryEntity) {
     return new ResultLottery(
-        new Participant(resultLotteryEntity.getName(), resultLotteryEntity.getAge(),
-                resultLotteryEntity.getCity()),
+        new Participant(
+            resultLotteryEntity.getName(),
+            resultLotteryEntity.getAge(),
+            resultLotteryEntity.getCity()),
         resultLotteryEntity.getWinValue());
   }
 }

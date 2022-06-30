@@ -1,7 +1,6 @@
 package ru.kastricyn.lottery.service;
 
 import ru.kastricyn.lottery.dto.Participant;
-import ru.kastricyn.lottery.dto.ResultLottery;
 import ru.kastricyn.lottery.entity.ParticipantEntity;
 import ru.kastricyn.lottery.entity.ResultLotteryEntity;
 import ru.kastricyn.lottery.exception.LotteryStartException;

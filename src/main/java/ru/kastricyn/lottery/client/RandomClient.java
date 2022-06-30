@@ -15,14 +15,12 @@ import java.util.Random;
 public interface RandomClient {
   Random random = new Random();
 
-  @GetMapping(
-      value = "/integers/",
-      consumes = MediaType.TEXT_PLAIN_VALUE)
-  ResponseEntity<String> getRandom(@SpringQueryMap QueryParams queryParams);
+  @GetMapping(value = "/integers/", consumes = MediaType.TEXT_PLAIN_VALUE)
+  ResponseEntity<Integer> getRandom(@SpringQueryMap QueryParams queryParams);
 
   default int getRandom(int min, int max) {
-//        var queryParams = new QueryParams(1, min, max, 1, 10, "plain", "new");
-//        return Integer.valueOf(getRandom(queryParams).getBody());
+    //        var queryParams = new QueryParams(1, min, max, 1, 10, "plain", "new");
+    //        return getRandom(queryParams).getBody();
     return Math.abs(random.nextInt() % (max - min) + min);
   }
 
