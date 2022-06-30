@@ -2,17 +2,19 @@ package ru.kastricyn.lottery.service;
 
 import ru.kastricyn.lottery.dto.Participant;
 import ru.kastricyn.lottery.dto.ResultLottery;
+import ru.kastricyn.lottery.entity.ParticipantEntity;
+import ru.kastricyn.lottery.entity.ResultLotteryEntity;
 import ru.kastricyn.lottery.exception.LotteryStartException;
 
 import java.util.List;
 
 public interface LotteryService {
 
-  void addParticipant(Participant participant);
+  ParticipantEntity addParticipant(Participant participant);
 
-  List<Participant> getAllParticipant();
+  List<ParticipantEntity> getAllParticipantEntity();
 
-  ResultLottery start() throws LotteryStartException;
+  ResultLotteryEntity start() throws LotteryStartException;
 
-  List<Participant> getAllWinners();
+  List<ResultLotteryEntity> getAllWinners();
 }

@@ -1,10 +1,6 @@
 package ru.kastricyn.lottery.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import ru.kastricyn.lottery.entity.ResultLotteryEntity;
 
-import java.util.List;
-
-public interface ResultLotteryRepository extends CrudRepository<ResultLotteryEntity, Long> {
-  List<ResultLotteryEntity> getAll();
-}
+public interface ResultLotteryRepository extends JpaRepository<ResultLotteryEntity, Long> {}
